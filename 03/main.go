@@ -2,6 +2,9 @@ package main
 
 import "fmt"
 
+// Problem:
+// Create a function that will sort the given array
+
 func main() {
 	input := []int{34, 7, 23, 32, 5, 62, -1}
 	fmt.Println("Input:", input)
