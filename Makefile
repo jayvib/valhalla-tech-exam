@@ -7,6 +7,7 @@ test:
 install-go:
 	wget https://dl.google.com/go/${GOSOURCE}
 	sha256sum ${GOSOURCE}
+	mkdir -p /usr/local
 	tar -C /usr/local -xzf ${GOSOURCE}
 	export PATH=${PATH}:/usr/local/go/bin
 	go version
