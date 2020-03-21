@@ -7,7 +7,7 @@ import (
 // Problem:
 // Create a function that will get the first recurring character feeded by string
 
-var ErrNotFound = errors.New("input don't have duplicate character")
+var ErrNotFound = errors.New("null")
 
 func main() {
 }
