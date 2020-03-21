@@ -2,6 +2,7 @@ package main
 
 import (
 	"errors"
+  "fmt"
 )
 
 // Problem:
@@ -10,6 +11,15 @@ import (
 var ErrNotFound = errors.New("null")
 
 func main() {
+  res, err := GetFirstRecurringCharacter("BBCA")
+  if err != nil {
+    if err == ErrNotFound {
+      fmt.Println("No duplicate Character")
+      return
+    }
+    return
+  }
+  fmt.Println(string(res))
 }
 
 func GetFirstRecurringCharacter(input string) (rune, error) {
