@@ -1,17 +1,36 @@
 package main
 
-import "fmt"
+import (
+  "bufio"
+  "fmt"
+  "github.com/jayvib/golog"
+  "os"
+  "valhalla/convert"
+)
 
 // Problem:
 // Create a function that accepts an array of integers and returns the highest
 // (and lowest value). Do not use predefined array functions.
 
 func main() {
-	input := []int{34, 7, 23, 32, 5, 62, -1}
-	l, h := GetHighestAndLowestItem(input)
-	fmt.Println("Input:", input)
-	fmt.Printf("Lowest: %d\n", l)
-  fmt.Printf("Highest: %d\n", h)
+  fmt.Println("USAGE: ", "A program that accept a series of integers and\ndetermines the highest and lowest value from the input")
+  fmt.Println()
+  scanner := bufio.NewScanner(os.Stdin)
+	for {
+    fmt.Print("Enter a series of integers: ")
+    scanner.Scan()
+    inputString := scanner.Text()
+    input, err := convert.StringToArrayOfInt(inputString)
+    if err != nil {
+      golog.Error(err)
+      continue
+    }
+    l, h := GetHighestAndLowestItem(input)
+    fmt.Println("Input:", input)
+    fmt.Printf("Lowest: %d\n", l)
+    fmt.Printf("Highest: %d\n", h)
+    fmt.Println()
+  }
 }
 
 func GetHighestAndLowestItem(ints []int) (lowest, highest int) {
