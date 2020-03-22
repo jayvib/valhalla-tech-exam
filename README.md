@@ -3,7 +3,7 @@ Valhalla Technical Exam
 
 Is the implementaion of the Valhalla Technical Exam.
 
-How to run...
+How to setup...
 
 Step 1: Install Go Language download the installer through below link:
 
