@@ -5,6 +5,7 @@ import (
   "errors"
 	"fmt"
   "os"
+  "valhalla/strings"
 )
 
 // Problem:
@@ -19,7 +20,7 @@ func main() {
   for {
     fmt.Print("Enter input: ")
     scanner.Scan()
-    input := scanner.Text()
+    input := strings.Minify(scanner.Text())
     res, err := GetFirstRecurringCharacter(input)
     if err != nil {
       if err == ErrNotFound {

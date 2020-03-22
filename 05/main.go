@@ -6,7 +6,7 @@ import (
   "github.com/jayvib/golog"
   "os"
   "valhalla/convert"
-  vstring "valhalla/string"
+  vstring "valhalla/strings"
 )
 
 // Problem:

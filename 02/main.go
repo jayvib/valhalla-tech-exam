@@ -7,6 +7,7 @@ import (
   "os"
   "valhalla/convert"
   vsort "valhalla/sort"
+  "valhalla/strings"
 )
 
 // Problem:
@@ -20,7 +21,7 @@ func main() {
 	for {
     fmt.Print("Enter a series of integers: ")
     scanner.Scan()
-    inputString := scanner.Text()
+    inputString := strings.Minify(scanner.Text())
     input, err := convert.StringToArrayOfInt(inputString)
     if err != nil {
       golog.Error(err)
