@@ -11,7 +11,7 @@ Step 1: Install Go Language download the installer through below link:
 
 Step 2: Run command below:
 
-    make build
+    make build -s
   
   This will build the executables and stores in bin/ directory
     
