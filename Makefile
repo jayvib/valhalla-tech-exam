@@ -8,7 +8,7 @@ build:
 	mkdir -p ./bin/
 	for i in $$(ls); do \
 		if [ -d $${i} ]; then \
-			if [ $${i} != "bin" ]; then \
+			if [[ $${i} =~ ^[0] ]]; then \
 				echo "Building $${i} -> ./bin/$${i}.exe"; \
 				go build -o ./bin/$${i}.exe ./$${i}; \
 			fi; \
