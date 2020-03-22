@@ -9,7 +9,9 @@ import "fmt"
 func main() {
 	input := []int{34, 7, 23, 32, 5, 62, -1}
 	l, h := GetHighestAndLowestItem(input)
-	fmt.Printf("Lowest: %d Highest: %d\n", l, h)
+	fmt.Println("Input:", input)
+	fmt.Printf("Lowest: %d\n", l)
+  fmt.Printf("Highest: %d\n", h)
 }
 
 func GetHighestAndLowestItem(ints []int) (lowest, highest int) {
