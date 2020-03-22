@@ -1,32 +1,36 @@
 package main
 
-import "fmt"
+import (
+  "bufio"
+  "fmt"
+  "github.com/jayvib/golog"
+  "os"
+  "valhalla/convert"
+  "valhalla/sort"
+)
 
 // Problem:
 // Create a function that will sort the given array
 
 func main() {
-	input := []int{34, 7, 23, 32, 5, 62, -1}
-	fmt.Println("Input:", input)
-	bubbleSortInt(input)
-	fmt.Println("Sorted:", input)
+  fmt.Println("USAGE: ", "A program that accepts a series of integers and print the sorted input in ascending order.")
+  fmt.Println()
+	scanner := bufio.NewScanner(os.Stdin)
+  for {
+    fmt.Print("Enter a series of integers: ")
+    scanner.Scan()
+
+    stringInput := scanner.Text()
+    input, err := convert.StringToArrayOfInt(stringInput)
+    if err != nil {
+      golog.Error(err)
+      fmt.Println()
+      continue
+    }
+    fmt.Println("Input:", input)
+    sort.Bubble(input)
+    fmt.Println("Sorted:", input)
+    fmt.Println()
+  }
 }
 
-// Worst Case: O(n^2)
-// Best Case: O(n)
-func bubbleSortInt(ints []int) {
-	unsortedUntilIndex := len(ints) - 1
-	isSorted := false
-	for !isSorted {
-		isSorted = true // assume that this pass through is already sorted
-		// check if the items are really sorted
-		for i := 0; i < unsortedUntilIndex; i++ {
-			if ints[i] > ints[i+1] {
-				// swap
-				ints[i], ints[i+1] = ints[i+1], ints[i]
-				isSorted = false
-			}
-		}
-		unsortedUntilIndex--
-	}
-}

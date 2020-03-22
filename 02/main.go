@@ -24,6 +24,7 @@ func main() {
     input, err := convert.StringToArrayOfInt(inputString)
     if err != nil {
       golog.Error(err)
+      fmt.Println()
       continue
     }
     l, h := GetHighestAndLowestItem(input)
