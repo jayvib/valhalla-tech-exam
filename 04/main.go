@@ -29,6 +29,7 @@ func main() {
       return
     }
     fmt.Println(input, "---->", string(res))
+    fmt.Println()
   }
 
 }

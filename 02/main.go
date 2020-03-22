@@ -6,6 +6,7 @@ import (
   "github.com/jayvib/golog"
   "os"
   "valhalla/convert"
+  vsort "valhalla/sort"
 )
 
 // Problem:
@@ -35,25 +36,7 @@ func main() {
 
 func GetHighestAndLowestItem(ints []int) (lowest, highest int) {
 	// Sort the array in ascending order
-	bubbleSortInt(ints)
+	vsort.Bubble(ints)
 	return ints[0], ints[len(ints)-1]
 }
 
-// Worst Case: O(n^2)
-// Best Case: O(n)
-func bubbleSortInt(ints []int) {
-	unsortedUntilIndex := len(ints) - 1
-	isSorted := false
-	for !isSorted {
-		isSorted = true // assume that this pass through is already sorted
-		// check if the items are really sorted
-		for i := 0; i < unsortedUntilIndex; i++ {
-			if ints[i] > ints[i+1] {
-				// swap
-				ints[i], ints[i+1] = ints[i+1], ints[i]
-				isSorted = false
-			}
-		}
-		unsortedUntilIndex--
-	}
-}
