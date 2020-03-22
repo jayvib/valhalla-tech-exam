@@ -14,7 +14,8 @@ var ErrNotFound = errors.New("null")
 
 func main() {
   scanner := bufio.NewScanner(os.Stdin)
-  fmt.Println("USAGE: A CLI program that will get the first recurring character from the user's input")
+  fmt.Println("USAGE: A program that will get the first recurring character from the user's input")
+  fmt.Println()
   for {
     fmt.Print("Enter input: ")
     scanner.Scan()

@@ -1,13 +1,12 @@
 package main
 
 import (
-	"bufio"
-	"fmt"
-	log "github.com/jayvib/golog"
-	"os"
-	"regexp"
-	"sort"
-	"strings"
+  "bufio"
+  "fmt"
+  log "github.com/jayvib/golog"
+  "os"
+  "regexp"
+  "strings"
 )
 
 // Problem:
@@ -17,7 +16,8 @@ import (
 func main() {
 
 	scanner := bufio.NewScanner(os.Stdin)
-
+  fmt.Println("USAGE: ", "A program what will reverse the user's input sentence.")
+  fmt.Println()
 	for {
 		fmt.Print("Enter a sentence(Type 'quit' to exit): ")
 
@@ -39,14 +39,7 @@ func main() {
 			break
 		}
 
-		// Step convert the sentence into a collection of strings
-		words := strings.Split(input, " ")
-
-		// Reverse the order of the word
-		sort.Sort(sort.Reverse(sort.StringSlice(words)))
-
-		// Join back the array of words into a sentence
-		reversedSentence := strings.Join(words, " ")
+		reversedSentence := reverseSentence(input)
 
 		fmt.Println(reversedSentence)
 	}
