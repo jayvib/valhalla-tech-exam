@@ -1,12 +1,12 @@
 package main
 
 import (
-  "bufio"
-  "fmt"
-  "github.com/jayvib/golog"
-  "os"
-  "valhalla/convert"
-  vstring "valhalla/strings"
+	"bufio"
+	"fmt"
+	"github.com/jayvib/golog"
+	"os"
+	"valhalla/convert"
+	vstring "valhalla/strings"
 )
 
 // Problem:
@@ -14,25 +14,25 @@ import (
 // combinations of 2 numbers and tell if any combination is equal to 8.
 
 func main() {
-  fmt.Println("USAGE: A program that will accepts a series of integers\n" +
-    "and check's if an array of number for all\n" +
-    "combination of 2 numbers has a sum equal to 8.")
-  fmt.Println()
-  scanner := bufio.NewScanner(os.Stdin)
+	fmt.Println("USAGE: A program that will accepts a series of integers\n" +
+		"and check's if an array of number for all\n" +
+		"combination of 2 numbers has a sum equal to 8.")
+	fmt.Println()
+	scanner := bufio.NewScanner(os.Stdin)
 	for {
-	  fmt.Print("Enter a series of integers: ")
-	  scanner.Scan()
-	  stringInput := vstring.Minify(scanner.Text())
-	  input, err := convert.StringToArrayOfInt(stringInput)
-	  if err != nil {
-	    golog.Error(err)
-	    fmt.Println()
-	    continue
-    }
-    isExists := IsSumOfTwoItemsIsEightExists(input)
-    fmt.Println("Input:", input, "---->", isExists)
-    fmt.Println()
-  }
+		fmt.Print("Enter a series of integers: ")
+		scanner.Scan()
+		stringInput := vstring.Minify(scanner.Text())
+		input, err := convert.StringToArrayOfInt(stringInput)
+		if err != nil {
+			golog.Error(err)
+			fmt.Println()
+			continue
+		}
+		isExists := IsSumOfTwoItemsIsEightExists(input)
+		fmt.Println("Input:", input, "---->", isExists)
+		fmt.Println()
+	}
 }
 
 func IsSumOfTwoItemsIsEightExists(items []int) bool {

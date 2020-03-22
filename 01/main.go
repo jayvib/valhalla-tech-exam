@@ -1,12 +1,12 @@
 package main
 
 import (
-  "bufio"
-  "fmt"
-  log "github.com/jayvib/golog"
-  "os"
-  "regexp"
-  "strings"
+	"bufio"
+	"fmt"
+	log "github.com/jayvib/golog"
+	"os"
+	"strings"
+	vstrings "valhalla/strings"
 )
 
 // Problem:
@@ -16,8 +16,8 @@ import (
 func main() {
 
 	scanner := bufio.NewScanner(os.Stdin)
-  fmt.Println("USAGE: ", "A program what will reverse the user's input sentence.")
-  fmt.Println()
+	fmt.Println("USAGE: ", "A program what will reverse the user's input sentence.")
+	fmt.Println()
 	for {
 		fmt.Print("Enter a sentence(Type 'quit' to exit): ")
 
@@ -55,7 +55,7 @@ func checkOnceQuit(input string) bool {
 func reverseSentence(str string) string {
 	// What if there's a lot of extra spaces?
 	// Need to minify first
-	str = minifyString(str)
+	str = vstrings.Minify(str)
 	words := strings.Split(str, " ")
 	reversedWords := make([]string, 0)
 
@@ -63,13 +63,4 @@ func reverseSentence(str string) string {
 		reversedWords = append(reversedWords, words[i])
 	}
 	return strings.Join(reversedWords, " ")
-}
-
-var space = regexp.MustCompile(`\s+`)
-
-// minifyString removes leading, trailing and extra spaces in the str.
-func minifyString(str string) string {
-	str = space.ReplaceAllString(str, " ")
-	str = strings.TrimSpace(str)
-	return str
 }

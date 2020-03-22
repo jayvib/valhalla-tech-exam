@@ -3,7 +3,7 @@ package main
 import (
 	"github.com/stretchr/testify/assert"
 	"testing"
-  "valhalla/sort"
+	"valhalla/sort"
 )
 
 func TestBubbleSortInt(t *testing.T) {
