@@ -1,8 +1,10 @@
 package main
 
 import (
-	"errors"
+  "bufio"
+  "errors"
 	"fmt"
+  "os"
 )
 
 // Problem:
@@ -11,15 +13,23 @@ import (
 var ErrNotFound = errors.New("null")
 
 func main() {
-	res, err := GetFirstRecurringCharacter("BBCA")
-	if err != nil {
-		if err == ErrNotFound {
-			fmt.Println("No duplicate Character")
-			return
-		}
-		return
-	}
-	fmt.Println(string(res))
+  scanner := bufio.NewScanner(os.Stdin)
+  fmt.Println("USAGE: A CLI program that will get the first recurring character from the user's input")
+  for {
+    fmt.Print("Enter input: ")
+    scanner.Scan()
+    input := scanner.Text()
+    res, err := GetFirstRecurringCharacter(input)
+    if err != nil {
+      if err == ErrNotFound {
+        fmt.Println("No duplicate Character")
+        continue
+      }
+      return
+    }
+    fmt.Println(input, "---->", string(res))
+  }
+
 }
 
 func GetFirstRecurringCharacter(input string) (rune, error) {
