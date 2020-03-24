@@ -17,7 +17,7 @@ Step 3: Run the code
 
     go run main.go
     
-Note: Repeat step 2 and 3 for the problem 02 to 05
+Note: Repeat step 2 and 3 for the directory 02 to 05
     
     
   
