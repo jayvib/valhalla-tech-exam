@@ -9,9 +9,15 @@ Step 1: Install Go Language download the installer through below link:
 
     https://golang.org/dl/
 
-Step 2: Run command below to build the five problem. The executable
-        file will be stored in bin/ directory.
+Step 2: Change directory to the problem's directory
 
-    make build -s
+    cd ./01
+
+Step 3: Run the code
+
+    go run main.go
+    
+Note: Repeat step 2 and 3 for the problem 02 to 05
+    
     
   
