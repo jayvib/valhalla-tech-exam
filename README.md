@@ -5,7 +5,7 @@ Is the implementaion of the Valhalla Technical Exam.
 
 How to setup...
 
-Step 1: Install Go Language download the installer through below link:
+Step 1: Install Go Language through downloading the installer from the link below:
 
     https://golang.org/dl/
 
