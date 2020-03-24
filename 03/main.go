@@ -15,6 +15,7 @@ import (
 
 func main() {
 	fmt.Println("USAGE: ", "A program that accepts a series of integers and print the sorted input in ascending order.")
+  fmt.Println("EXAMPLE: \n\tEnter a series of integers: 2 1 3 5")
 	fmt.Println()
 	scanner := bufio.NewScanner(os.Stdin)
 	for {

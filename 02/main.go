@@ -16,6 +16,7 @@ import (
 
 func main() {
 	fmt.Println("USAGE: ", "A program that accept a series of integers and\ndetermines the highest and lowest value from the input")
+	fmt.Println("EXAMPLE: \n\tEnter a series of integers: 2 1 3 5")
 	fmt.Println()
 	scanner := bufio.NewScanner(os.Stdin)
 	for {

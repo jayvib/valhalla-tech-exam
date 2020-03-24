@@ -15,8 +15,9 @@ import (
 
 func main() {
 	fmt.Println("USAGE: A program that will accepts a series of integers\n" +
-		"and check's if an array of number for all\n" +
-		"combination of 2 numbers has a sum equal to 8.")
+		"\tand check's if an array of number for all\n" +
+		"\tcombination of 2 numbers has a sum equal to 8.")
+	fmt.Println("EXAMPLE: \n\tEnter a series of integers: 1 4 4 2")
 	fmt.Println()
 	scanner := bufio.NewScanner(os.Stdin)
 	for {

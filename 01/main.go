@@ -17,6 +17,7 @@ func main() {
 
 	scanner := bufio.NewScanner(os.Stdin)
 	fmt.Println("USAGE: ", "A program what will reverse the user's input sentence.")
+	fmt.Println("EXAMPLE:\n\tEnter a sentence(Type 'quit' to exit): Hello World")
 	fmt.Println()
 	for {
 		fmt.Print("Enter a sentence(Type 'quit' to exit): ")

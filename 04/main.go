@@ -16,6 +16,7 @@ var ErrNotFound = errors.New("null")
 func main() {
 	scanner := bufio.NewScanner(os.Stdin)
 	fmt.Println("USAGE: A program that will get the first recurring character from the user's input")
+  fmt.Println("EXAMPLE: \n\tEnter input: ABBC")
 	fmt.Println()
 	for {
 		fmt.Print("Enter input: ")
@@ -25,6 +26,7 @@ func main() {
 		if err != nil {
 			if err == ErrNotFound {
 				fmt.Println("No duplicate Character")
+				fmt.Println()
 				continue
 			}
 			return
